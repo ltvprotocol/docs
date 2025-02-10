@@ -1,3 +1,3 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+- [LTV protocol paper](./LTV_protocol_paper.md)
