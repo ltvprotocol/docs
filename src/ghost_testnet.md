@@ -42,7 +42,7 @@ Source code: [Spooky Oracle](https://github.com/ltvprotocol/ltv_v0/blob/ghost/sr
 
 ## HodlMyBeer Lending Protocol
 
-The HodlMyBeer Lending Protocol is a dummy lending system that supports an isolated WETH-to-MAE pool. The LST Vault interacts with this protocol to borrow MagicETH tokens and execute leveraged yield strategies.
+The HodlMyBeer Lending Protocol is a dummy lending system that supports an isolated WETH-to-MAE pool. The LTV Vault interacts with this protocol to borrow WETH and provide MagicETH as collateral and execute leveraged yield strategies.
 
 Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/hodlmybeer/HodlMyBeerLending.sol)
 
