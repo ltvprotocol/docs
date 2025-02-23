@@ -2,13 +2,13 @@
 
 The LST Vault is an implementation of an EIP-4626 vault designed for leveraging WETH (Wrapped ETH) deposits to generate yield over time. Users can deposit WETH, hold for a few months, and earn more WETH through a leveraged strategy utilizing the Magic ETH (MAE) token.
 
-The vault borrows MagicLST from the HodlMyBeer Lending protocol and follows the design principles outlined in the research paper: [LTV: Curatorless Leveraged Tokenized Vault with a Constant Target Loan-To-Value Ratio](https://github.com/ltvprotocol/papers/blob/main/LTV_Curatorless_Leveraged_Tokenized_Vault_with_a_Constant_Target_Loan-To-Value_Ratio.pdf)
+The vault borrows WETH and use MagicETH as collateral in the HodlMyBeer Lending protocol and follows the design principles outlined in the research paper: [LTV: Curatorless Leveraged Tokenized Vault with a Constant Target Loan-To-Value Ratio](https://github.com/ltvprotocol/papers/blob/main/LTV_Curatorless_Leveraged_Tokenized_Vault_with_a_Constant_Target_Loan-To-Value_Ratio.pdf)
 
 # Components
 
 ## LST Vault
 
-The LST Vault is a smart contract that accepts WETH deposits and borrows MagicLST tokens from the HodlMyBeer Lending Protocol. The vault borrowed WETH and keep MagicLST tokens as collateral in target LTV ratio. Users can deposit WETH and MagicETH into the vault and receive more WETH and MagicETH after a certain period.
+The LST Vault is a smart contract that accepts WETH and MagicETH deposits. The vault borrowed WETH and keep MagicLST tokens as collateral in target LTV ratio in HodlMyBeer Lending Protocol. Users can deposit WETH and MagicETH into the vault and receive more WETH and MagicETH after a certain period.
 
 Source code: [LST Vault](https://github.com/ltvprotocol/ltv_v0)
 
@@ -36,13 +36,13 @@ Source code: [Magic ETH](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/gh
 
 ## Spooky Oracle
 
-The Spooky Oracle provides the real-time redemption price of Magic ETH (MAE) and feeds this data into the LST Vault. It is maintained by the LST Protocol Team to ensure accurate pricing for yield calculations and leverage adjustments.
+The Spooky Oracle provides the real-time redemption price of Magic ETH (MAE) and feeds this data into the LTV Vault. It is maintained by the LST Protocol Team to ensure accurate pricing for yield calculations and leverage adjustments.
 
 Source code: [Spooky Oracle](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/spooky/SpookyOracle.sol)
 
 ## HodlMyBeer Lending Protocol
 
-The HodlMyBeer Lending Protocol is a dummy lending system that supports an isolated WETH-to-MAE pool. The LST Vault interacts with this protocol to borrow MagicLST tokens and execute leveraged yield strategies.
+The HodlMyBeer Lending Protocol is a dummy lending system that supports an isolated WETH-to-MAE pool. The LST Vault interacts with this protocol to borrow MagicETH tokens and execute leveraged yield strategies.
 
 Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/hodlmybeer/HodlMyBeerLending.sol)
 
