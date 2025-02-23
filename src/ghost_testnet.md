@@ -8,7 +8,7 @@ The vault borrows WETH and use MagicETH as collateral in the HodlMyBeer Lending 
 
 ## LST Vault
 
-The LST Vault is a smart contract that accepts WETH and MagicETH deposits. The vault borrowed WETH and keep MagicLST tokens as collateral in target LTV ratio in HodlMyBeer Lending Protocol. Users can deposit WETH and MagicETH into the vault and receive more WETH and MagicETH after a certain period.
+The LTV Vault is a smart contract that accepts WETH and MagicETH deposits. The vault borrows WETH and keeps MagicETH tokens as collateral in target LTV ratio in HodlMyBeer Lending Protocol. Users can deposit WETH and MagicETH into the vault and receive more WETH and MagicETH after a certain period.
 
 Source code: [LST Vault](https://github.com/ltvprotocol/ltv_v0)
 
