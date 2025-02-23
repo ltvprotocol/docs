@@ -36,7 +36,7 @@ Source code: [Magic ETH](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/gh
 
 ## Spooky Oracle
 
-The Spooky Oracle provides the real-time redemption price of Magic ETH (MAE) and feeds this data into the LTV Vault. It is maintained by the LST Protocol Team to ensure accurate pricing for yield calculations and leverage adjustments.
+The Spooky Oracle provides the real-time redemption price of Magic ETH (MAE) and feeds this data into the LTV Vault. It is maintained by the LTV Protocol Team to ensure accurate pricing for yield calculations and leverage adjustments.
 
 Source code: [Spooky Oracle](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/spooky/SpookyOracle.sol)
 
