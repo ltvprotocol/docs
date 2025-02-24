@@ -146,3 +146,10 @@
 ### **Ownership Events**
 
 - `OwnershipTransferred(address indexed previousOwner, address indexed newOwner)`
+
+---
+
+## EIP links
+
+- [ERC4626](https://eips.ethereum.org/EIPS/eip-4626)
+- [ERC20](https://eips.ethereum.org/EIPS/eip-20)
