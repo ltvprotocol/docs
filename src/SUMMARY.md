@@ -4,4 +4,4 @@
 
 - [Ghost testnet](./ghost_testnet.md)
 
-- [ltv_abi.md](./ltv_abi.md)
+- [Public contract ABI](./ltv_abi.md)
