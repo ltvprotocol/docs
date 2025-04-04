@@ -14,7 +14,7 @@ Source code: [LTV Vault](https://github.com/ltvprotocol/ltv_v0)
 
 Ghost Testnet branch: [ghost-testnet](https://github.com/ltvprotocol/ltv_v0/tree/ghost)
 
-Actual (v0.1.1) tag: [ghost_v0.1.0](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.1)
+Actual (v0.1.1) tag: [ghost_v0.1.1](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.1)
 
 ## WETH (Wrapped Testnet ETH)
 
