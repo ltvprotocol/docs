@@ -278,5 +278,9 @@
 
 - `oracleConnector() → address` - Returns oracle connector address.
 - `lendingConnector() → address` - Returns lending protocol connector address.
+---
 
-### **Write Connector Address**
+## EIP links
+
+- [ERC4626](https://eips.ethereum.org/EIPS/eip-4626)
+- [ERC20](https://eips.ethereum.org/EIPS/eip-20)
