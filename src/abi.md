@@ -214,6 +214,8 @@
 
   deltaShares - amount of shares user will receive or burn after execution. If *deltaShares* > 0 - user will receive *deltaShares* shares. Otherwise, *-deltaShares* shares will be burned.
 
+---
+
 ## **State Representation**
 
 ### **State Read Methods**
@@ -278,6 +280,7 @@
 
 - `oracleConnector() → address` - Returns oracle connector address.
 - `lendingConnector() → address` - Returns lending protocol connector address.
+
 ---
 
 ## EIP links
