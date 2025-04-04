@@ -14,7 +14,7 @@ Source code: [LTV Vault](https://github.com/ltvprotocol/ltv_v0)
 
 Ghost Testnet branch: [ghost-testnet](https://github.com/ltvprotocol/ltv_v0/tree/ghost)
 
-Actual (v0.1.0) tag: [ghost_v0.1.0](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.0)
+Actual (v0.1.1) tag: [ghost_v0.1.1](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.1)
 
 ## WETH (Wrapped Testnet ETH)
 
@@ -62,3 +62,15 @@ Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0
 | **Magic ETH** | [Source code](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/magic/MagicETH.sol) | [0x8f7b2044f9aa6fbf495c1cc3bde120df9032ae43](https://sepolia.etherscan.io/address/0x8f7b2044f9aa6fbf495c1cc3bde120df9032ae43#code) 
 | **Spooky Oracle** | [Source code](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/spooky/SpookyOracle.sol) | [0x6074d1d4022521147db1fad7bacc486b35a64df3](https://sepolia.etherscan.io/address/0x6074d1d4022521147db1fad7bacc486b35a64df3)
 | **HodlMyBeer Lending Protocol** | [Source code](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/hodlmybeer/HodlMyBeerLending.sol) | [0x1dcd756db287354c4607d5d57621cdfb4456e2d4](https://sepolia.etherscan.io/address/0x1dcd756db287354c4607d5d57621cdfb4456e2d4#readProxyContract) 
+
+# Versions
+
+## v0.1.1
+Actual (v0.1.1) tag: [ghost_v0.1.1](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.1)
+
+Deployed contract implementation: [0x95fe6151ad668984b1c7b193866302b41b90887a](https://sepolia.etherscan.io/address/0x95fe6151ad668984b1c7b193866302b41b90887a)
+
+## v0.1.0
+Previous (v0.1.0) tag: [ghost_v0.1.0](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.0)
+
+Deployed contract implementation: [0xeb81c4fe3d8e3c146a25bf9ea2309977071b6490](https://sepolia.etherscan.io/address/0xeb81c4fe3d8e3c146a25bf9ea2309977071b6490)
