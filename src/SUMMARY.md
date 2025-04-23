@@ -7,3 +7,5 @@
 - [Public contract ABI](./abi.md)
 
 - [EIP 4626 systematisation](./eip4626.md)
+
+- [Connectors](./connectors.md)
