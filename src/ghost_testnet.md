@@ -46,6 +46,14 @@ The HodlMyBeer Lending Protocol is a dummy lending system that supports an isola
 
 Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/hodlmybeer/HodlMyBeerLending.sol)
 
+## Pico UI — LTV Testnet Frontend
+
+Detailed documentation: [pico_ui_frontend.md](./pico_ui_frontend.md)
+A minimal and lightweight frontend for interacting with the [LTV Protocol](https://ltv.finance) testnet vaults.
+
+Source code: [Pico UI](https://github.com/ltvprotocol/pico_ui)
+Detailed documentation: [Pico UI — LTV Testnet Frontend](./pico_ui_frontend.md)
+
 # How to Use
 
 1. Obtain ETH from the Sepolia Testnet faucets.
