@@ -1,16 +1,16 @@
-# Pico UI — LTV Testnet Frontend
+# Pico UI
 
-A minimal and lightweight frontend for interacting with the [LTV Protocol](https://ltv.finance) testnet vaults.
+A minimal and lightweight frontend for interacting with the LTV Protocol testnet vaults.
 
-## General Information
+## About
 
-**Pico UI** is a simple interface designed to interact with LTV Protocol vaults. It allows users to easily manage collateral and borrow positions.
+**Pico UI** is a simple user interface designed to interact with vaults. It gives access to all main actions: deposit, mint, withdraw, redeem for borrow and collateral tokens. Also it shows balances and main vault information, creates possibility to convenient and simple interact with vaults.
 
 Key features:
 
 - Connect with any EIP-6963 compatible browser wallet (e.g., MetaMask, Trust Wallet, Rainbow, and others)
-- Deposit or mint assets with borrow/collateral tokens
-- Withdraw or redeem assets with borrow/collateral tokens
+- Deposit assets or mint shares with borrow/collateral tokens
+- Withdraw assets or redeem shares with borrow/collateral tokens
 - View real-time vault and transaction statuses
 
 On the Ghost testnet, available tokens are:
@@ -18,10 +18,10 @@ On the Ghost testnet, available tokens are:
 - **WETH (Wrapped Ether)** — used as the borrow token
 - **MAE (Magic ETH)** — used as the collateral token
 
-## Links
+## Deployed Testnet Version
 
-- **Deployed Testnet Version:** [https://testnet.ltv.finance](https://testnet.ltv.finance)
-- **GitHub Repository:** [https://github.com/ltvprotocol/pico_ui](https://github.com/ltvprotocol/pico_ui)
+[https://testnet.ltv.finance](https://testnet.ltv.finance)
+
 
 ## 🏷️ Release Versions
 
@@ -37,7 +37,7 @@ On the Ghost testnet, available tokens are:
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository [https://github.com/ltvprotocol/pico_ui](https://github.com/ltvprotocol/pico_ui)
 2. Install dependencies:
    ```bash
    npm install

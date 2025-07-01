@@ -46,14 +46,6 @@ The HodlMyBeer Lending Protocol is a dummy lending system that supports an isola
 
 Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0/blob/ghost/src/ghost/hodlmybeer/HodlMyBeerLending.sol)
 
-## Pico UI — LTV Testnet Frontend
-
-Detailed documentation: [pico_ui_frontend.md](./pico_ui_frontend.md)
-A minimal and lightweight frontend for interacting with the [LTV Protocol](https://ltv.finance) testnet vaults.
-
-Source code: [Pico UI](https://github.com/ltvprotocol/pico_ui)
-Detailed documentation: [Pico UI — LTV Testnet Frontend](./pico_ui_frontend.md)
-
 # How to Use
 
 1. Obtain ETH from the Sepolia Testnet faucets.
@@ -61,6 +53,14 @@ Detailed documentation: [Pico UI — LTV Testnet Frontend](./pico_ui_frontend.md
 3. Deposit WETH into the [LTV Vault](https://sepolia.etherscan.io/address/0xe2a7f267124ac3e4131f27b9159c78c521a44f3c#writeProxyContract).
 4. Wait for the yield generation period to end.
 5. Withdraw your WETH or MagicETH from the [LTV Vault](https://sepolia.etherscan.io/address/0xe2a7f267124ac3e4131f27b9159c78c521a44f3c#writeProxyContract).
+
+# Pico UI
+
+A minimal and lightweight frontend for interacting with the ghost testnet vaults.
+[https://testnet.ltv.finance](https://testnet.ltv.finance)
+
+Source code: [https://github.com/ltvprotocol/pico_ui](https://github.com/ltvprotocol/pico_ui)
+Detailed documentation: [Pico UI Docs](./pico_ui.md)
 
 # Contract Addresses
 

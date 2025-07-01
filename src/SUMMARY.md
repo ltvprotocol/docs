@@ -4,7 +4,7 @@
 
 - [Ghost testnet](./ghost_testnet.md)
 
-- [Pico UI Frontend](./pico_ui_frontend.md)
+- [Pico UI](./pico_ui.md)
 
 - [Public contract ABI](./abi.md)
 
