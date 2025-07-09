@@ -56,8 +56,7 @@ Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0
 
 # Pico UI
 
-A minimal and lightweight frontend for interacting with the ghost testnet vaults.
-[https://testnet.ltv.finance](https://testnet.ltv.finance)
+A minimal and lightweight frontend for interacting with the ghost [testnet vaults](https://testnet.ltv.finance).
 
 Source code: [https://github.com/ltvprotocol/pico_ui](https://github.com/ltvprotocol/pico_ui)
 Detailed documentation: [Pico UI Docs](./pico_ui.md)
