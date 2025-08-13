@@ -54,6 +54,13 @@ Source code: [HodlMyBeer Lending Protocol](https://github.com/ltvprotocol/ltv_v0
 4. Wait for the yield generation period to end.
 5. Withdraw your WETH or MagicETH from the [LTV Vault](https://sepolia.etherscan.io/address/0xe2a7f267124ac3e4131f27b9159c78c521a44f3c#writeProxyContract).
 
+# Pico UI
+
+A minimal and lightweight frontend for interacting with the ghost [testnet vaults](https://testnet.ltv.finance).
+
+Source code: [https://github.com/ltvprotocol/pico_ui](https://github.com/ltvprotocol/pico_ui)
+Detailed documentation: [Pico UI Docs](./pico_ui.md)
+
 # Contract Addresses
 
 | Name           | Source Code | Address |

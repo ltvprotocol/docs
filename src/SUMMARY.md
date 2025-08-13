@@ -4,6 +4,8 @@
 
 - [Ghost testnet](./ghost_testnet.md)
 
+- [Pico UI](./pico_ui.md)
+
 - [Public contract ABI](./abi.md)
 
 - [EIP 4626 systematisation](./eip4626.md)
