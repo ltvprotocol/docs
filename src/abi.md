@@ -2,92 +2,88 @@
 
 ## EIP-4626 Standard (Borrow Vault)
 
-### EIP-4626 read methods/view functions
+### EIP-4626 read methods/view function
 
-1. `asset() → address`
-    - **Type:** `view`
-    - **Outputs:** `address` - The address of the asset token used by the borrow vault.
-    - **Description:** This function returns the address of the main asset token for the borrow vault.
-2. `totalAssets() → uint256`
+1. `totalAssets() → uint256`
     - **Type:** `view`
     - **Outputs:** `uint256` - The total amount of borrowed assets in the vault
     - **Description:** This function returns the total borrowed assets in the vault, including real and future auction assets.
-3. `totalAssets(bool isDeposit) → uint256`
+2. `totalAssets(bool isDeposit) → uint256`
     - **Type:** `view`
     - **Inputs:** `isDeposit (bool)` - Whether this is for deposit operations (true) or withdrawal operations (false)
     - **Outputs:** `uint256` - Returns the total amount of borrow assets managed by the vault
     - **Description:** This function returns the total borrow assets with context-aware pricing. When `isDeposit = true`, uses optimistic pricing (rounds up collateral, rounds down borrow). When `isDeposit = false,` uses conservative pricing (rounds down collateral, rounds up borrow).
-4. `convertToShares(uint256 assets) → uint256`
+3. `convertToShares(uint256 assets) → uint256`
     - **Type:** `view`
     - **Inputs:** `assets (uint256)` - The amount of borrowed assets to convert
     - **Outputs:** `uint256` - The number of shares based on the assets
     - **Description:** This function returns how many vault shares are obtained for a certain amount of borrowed assets.
-5. `convertToAssets(uint256 shares) → uint256`
+4. `convertToAssets(uint256 shares) → uint256`
     - **Type:** `view`
     - **Inputs:** `shares (uint256)` - The number of shares to convert
     - **Outputs:** `uint256` - The amount of borrowed assets based on the shares
     - **Description:**  This function returns how many borrowed assets are obtained for a certain number of vault shares.
-6. `maxDeposit(address receiver) → uint256`
+5. `maxDeposit(address receiver) → uint256`
     - **Type:** `view`
     - **Inputs:** `receiver (address)` - The address to check deposit limits
     - **Outputs:** `uint256` - The maximum amount of borrowed assets that can be deposited
     - **Description:** The function returns the maximum borrowed assets that the receiver can deposit.
-7. `maxMint(address receiver) → uint256`
+6. `maxMint(address receiver) → uint256`
     - **Type:** `view`
     - **Inputs:** `receiver (address)` - The address to check mint limits
     - **Outputs:** `uint256` - The maximum number of shares that can be minted for the receiver
     - **Description:** This function shows the maximum vault shares that can be minted for the receiver.
-8. `maxWithdraw(address owner) → uint256`
+7. `maxWithdraw(address owner) → uint256`
     - **Type:** `view`
     - **Inputs:** `owner (address)` - The address to check withdrawal limits
     - **Outputs:** `uint256` - The maximum amount of borrowed assets that can be withdrawn
     - **Description:** This function returns the maximum borrowed assets the owner can withdraw.
-9. `maxRedeem(address owner) → uint256`
+8. `maxRedeem(address owner) → uint256`
     - **Type:** `view`
     - **Inputs:** `owner (address)` - The address to check redemption limits
     - **Outputs:** `uint256` - The maximum number of shares that can be redeemed
     - **Description:** This function returns the maximum shares the owner can redeem.
-10. `previewDeposit(uint256 assets) → uint256`
+9. `previewDeposit(uint256 assets) → uint256`
     - **Type:** `view`
     - **Inputs:** `assets (uint256)` - The amount of borrowed assets to deposit
     - **Outputs:** `uint256` - The estimated number of shares received
     - **Description:** This function returns the estimates of how many vault shares you get for depositing a specified amount of borrowed assets.
 
-11. `previewMint(uint256 shares) → uint256`
+11. `previewMint(uint256 shares) → (uint256 assets)`
 
 - **Type:** `view`
 - **Inputs:** `shares (uint256)` - The number of shares to mint
 - **Outputs:** `uint256` - The estimated amount of borrowed assets needed
 - **Description:** This function returns the estimates of how many borrowed assets are needed to mint a specified number of shares.
-1. `previewWithdraw(uint256 assets) → uint256`
+1. `previewWithdraw(uint256 assets) → (uint256 shares)`
     - **Type:** `view`
     - **Inputs:** `assets (uint256)` - The amount of borrowed assets to withdraw
-    - **Outputs:** `uint256` - The estimated number of shares to be burned
+    - **Outputs:** `uint256 shares` - The estimated number of shares to be burned
     - **Description:** This function returns the estimates of how many shares must be burned to withdraw the specified amount of borrowed assets.
-2.  `previewRedeem(uint256 shares) → uint256`
+2.  `previewRedeem(uint256 shares) → (uint256 assets)`
     - **Type:** `view`
     - **Inputs:** `shares (uint256)` - The number of shares to redeem
-    - **Outputs:** `uint256` - The estimated amount of borrowed assets to be received
+    - **Outputs:** `uint256 assets` - The estimated amount of borrowed assets to be received
     - **Description:** This function returns the estimates of how many borrowed assets to get for redeeming the specified number of shares.
 
 ### EIP-4626 write methods
 
 1. `deposit(uint256 assets, address receiver) → uint256`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:**
         - `assets (uint256)` - The amount of borrowed assets to deposit
         - `receiver (address)` - The address to receive the minted shares
     - **Outputs:** `uint256` - The number of shares minted for the receiver
     - **Description:** The function deposits borrowed assets and mints vault shares to the receiver. This may trigger rebalancing to maintain the target loan-to-value (LTV) ratio.
-2. `mint(uint256 shares, address receiver) → uint256`
-    - **Type:** `nonpayable`
+2. `mint(uint256 shares, address receiver) → (uint256 assets)`
+    - **Type:** `impure`
     - **Inputs:**
         - `shares (uint256)` - The number of shares to mint
         - `receiver (address)` - The address to receive the minted shares
     - **Outputs:** `uint256` - The amount of borrowed assets used to mint the shares
     - **Description:** This function mints vault shares in exchange for borrowed assets. The required asset amount is calculated based on current exchange rates.
 3. `withdraw(uint256 assets, address receiver, address owner) → uint256`
-- **Type:** `nonpayable`
+- **Type:** `impure`
 - **Inputs:**
     - `assets (uint256)` - The amount of borrowed assets to withdraw
     - `receiver (address)` - The address to receive the withdrawn assets
@@ -95,14 +91,14 @@
 - **Outputs:** `uint256` - The number of shares burned from the owner
     - **Description:** This function withdraws borrowed assets by burning shares from the owner and transferring the assets to the receiver.
 
-16. `redeem(uint256 shares, address receiver, address owner) → uint256`
+16. `redeem(uint256 shares, address receiver, address owner) → (uint256 assets)`
 
-- **Type:** `nonpayable`
+- **Type:** `impure`
 - **Inputs:**
     - `shares (uint256)` - The number of shares to redeem
     - `receiver (address)` - The address to receive the withdrawn assets
     - `owner (address)` - The address whose shares will be burned
-- **Outputs:** `uint256` - The amount of borrowed assets transferred to the receiver
+- **Outputs:** `uint256 assets` - The amount of borrowed assets transferred to the receiver
 - **Description:** This function redeems shares and transfers the corresponding borrowed assets.
 
 ## EIP-4626 Collateral Extension
@@ -129,41 +125,31 @@
     - **Inputs:** `owner (address)` - The address to check for how much collateral can be withdrawn.
     - **Outputs:** `uint256` - The maximum amount of collateral assets that can be withdrawn.
     - **Description:** This function returns the maximum collateral assets the owner can withdraw.
-5. `previewDepositCollateral(uint256 assets) → uint256`
+5. `previewDepositCollateral(uint256 collateralAssets) → uint256`
     - **Type:** `view`
-    - **Inputs:** `assets (uint256)` - The amount of collateral assets to deposit.
+    - **Inputs:** `collateralAssets (uint256)` - The amount of collateral assets to deposit.
     - **Outputs:** `uint256` - The estimated number of collateral shares to receive.
     - **Description:** This function estimates how many collateral shares to get for depositing a specific amount of collateral assets.
-6. `previewMintCollateral(uint256 shares) → uint256`
+6. `previewMintCollateral(uint256 shares) → (uint256 collateralAssets)`
     - **Type:** `view`
     - **Inputs:** `shares (uint256)` - The number of collateral shares to mint.
     - **Outputs:** uint256 - The estimated amount of collateral assets needed.
     - **Description:**  This function estimates how much collateral is required to mint a specific number of shares.
-7. `previewRedeemCollateral(uint256 shares) → uint256`
+7. `previewRedeemCollateral(uint256 shares) → (uint256 assets)`
     - **Type:** `view`
     - **Inputs:** `shares (uint256)` - The number of collateral shares to redeem.
-    - **Outputs:** `uint256` - The estimated amount of collateral assets to receive.
+    - **Outputs:** `uint256 assets` - The estimated amount of collateral assets to receive.
     - **Description:** This function returns an estimate of how much collateral to get for redeeming a specific number of shares.
-8. `previewWithdrawCollateral(uint256 assets) → uint256`
+8. `previewWithdrawCollateral(uint256 assets) → (uint256 shares)`
     - **Type:** `view`
     - **Inputs:** `assets (uint256)` - The amount of collateral assets to withdraw.
-    - **Outputs:** `uint256` - The estimated number of collateral shares that will be burned.
+    - **Outputs:** `uint256 shares` - The estimated number of collateral shares that will be burned.
     - **Description:** This function returns the estimated number of collateral shares that need to be burned to withdraw a specific amount of collateral assets.
-9. `convertToSharesCollateral(uint256 assets) → uint256`
-    - **Type:** `view`
-    - **Inputs:** `assets (uint256)` - The amount of collateral assets to convert.
-    - **Outputs:** `uint256` - The number of collateral shares corresponding to the assets.
-    - **Description:** This function calculates how many collateral shares correspond to a given amount of collateral assets.
-10. `convertToAssetsCollateral(uint256 shares) → uint256`
-    - **Type:** `view`
-    - **Inputs:** `shares (uint256)` - The number of collateral shares to convert.
-    - **Outputs:** `uint256` - The amount of collateral assets corresponding to the shares.
-    - **Description:** This function calculates how many collateral assets correspond to a given number of collateral shares.
-11. `totalAssetsCollateral() → uint256`
+9. `totalAssetsCollateral() → uint256`
     - **Type:** `view`
     - **Outputs:** `uint256` - The total amount of collateral assets managed by the vault.
     - **Description:** This function returns the total collateral assets in the vault using conservative pricing `(isDeposit = false)`.
-12. `totalAssetsCollateral(bool isDeposit) → uint256`
+10. `totalAssetsCollateral(bool isDeposit) → uint256`
     - **Type:** `view`
     - **Inputs:** `isDeposit (bool)` - Whether this is for a deposit operation (true) or withdrawal operation (false).
     - **Outputs:** `uint256` - The total amount of collateral assets managed by the vault.
@@ -171,35 +157,35 @@
 
 ### EIP-4626 write methods
 
-1. `depositCollateral(uint256 assets, address receiver) → uint256`
-    - **Type:** `nonpayable`
+1. `depositCollateral(uint256 collateralAssets, address receiver) → uint256`
+    - **Type:** `impure`
     - **Inputs:**
-        - `assets (uint256)` - The amount of collateral assets to deposit.
+        - `collateralAssets (uint256)` - The amount of collateral assets to deposit.
         - `receiver (address)` - The address to receive the minted collateral shares.
     - **Outputs:** `uint256` - The number of collateral shares minted to the receiver.
     - **Description:** This function deposits collateral assets and mints collateral shares to the receiver.
-2. `mintCollateral(uint256 shares, address receiver) → uint256`
-    - **Type:** `nonpayable`
+2. `mintCollateral(uint256 shares, address receiver) → (uint256 collateralAssets)`
+    - **Type:** `impure`
     - **Inputs:**
         - `shares (uint256)` - The number of collateral shares to mint.
         - `receiver (address)` - The address to receive the minted shares.
-    - **Outputs:** `uint256` - The amount of collateral assets used to mint the shares.
+    - **Outputs:** `uint256 collateralAssets` - The amount of collateral assets used to mint the shares.
     - **Description:** This function mints collateral shares in exchange for collateral assets.
-3. `withdrawCollateral(uint256 assets, address receiver, address owner) → uint256`
-    - **Type:** `nonpayable`
+3. `withdrawCollateral(uint256 collateralAssets, address receiver, address owner) → uint256`
+    - **Type:** `impure`
     - **Inputs:**
-        - `assets (uint256)` - The amount of collateral assets to withdraw.
+        - `collateralAssets (uint256)` - The amount of collateral assets to withdraw.
         - `receiver (address)` - The address to receive the withdrawn collateral assets.
         - `owner (address)` - The address whose collateral shares will be burned.
     - **Outputs:** `uint256` - The number of collateral shares burned from the owner.
     - **Description:** This function withdraws collateral assets by burning collateral shares from the owner.
-4. `redeemCollateral(uint256 shares, address receiver, address owner) → uint256`
-    - **Type:** `nonpayable`
+4. `redeemCollateral(uint256 shares, address receiver, address owner) → (uint256 collateralAssets)`
+    - **Type:** `impure`
     - **Inputs:**
         - `shares (uint256)` - The number of collateral shares to redeem.
         - `receiver (address)` - The address to receive the withdrawn collateral assets.
         - `owner (address)` - The address whose collateral shares will be burned.
-    - **Outputs:** `uint256` - The amount of collateral assets transferred to the receiver.
+    - **Outputs:** `uint256 collateralAssets` - The amount of collateral assets transferred to the receiver.
     - **Description:** This function redeems collateral shares and transfers the corresponding collateral assets to the receiver.
 
 ## ERC-20 Standard
@@ -238,21 +224,21 @@
 ### ERC-20 write methods
 
 1. `approve(address spender, uint256 amount) → bool`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:**
         - `spender (address)` - The address to approve for spending.
         - `amount (uint256)` - The amount of tokens to approve.
     - **Outputs:** `bool` - The success status.
     - **Description:** This function approves the spender to use an amount of tokens on behalf of the caller.
 2. `transfer(address recipient, uint256 amount) → bool`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:**
         - `recipient (address)` - The address to transfer tokens to.
         - `amount (uint256)` - The amount of tokens to transfer.
     - **Outputs:** `bool` - The success status.
     - **Description:** This function transfers amount tokens to the recipient.
 3. `transferFrom(address sender, address recipient, uint256 amount) → bool`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:**
         - `sender (address)` - The address to transfer tokens from.
         - `recipient (address)` - The address to transfer tokens to.
@@ -282,12 +268,12 @@
 ### Auction write methods
 
 1. `executeAuctionBorrow(int256 deltaUserBorrowAssets) → int256`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `deltaUserBorrowAssets (int256)` - The change in user borrow assets (positive to receive, negative to provide).
     - **Outputs:** `int256` - The actual amount of borrow assets transferred.
     - **Description:** This function executes an auction for borrow assets, allowing users to participate in rebalancing for rewards.
 2. `executeAuctionCollateral(int256 deltaUserCollateralAssets) → int256`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `deltaUserCollateralAssets (int256)` - The change in user collateral assets (positive to receive, negative to provide).
     - **Outputs:** `int256` - The actual amount of collateral assets transferred.
     - **Description:** This function executes an auction for collateral assets, allowing users to participate in rebalancing for rewards.
@@ -350,44 +336,44 @@
 
 ### Low level rebalance write methods
 
-1. `executeLowLevelBorrow(int256 deltaBorrow) → (int256 deltaCollateral, int256 deltaShares)`
-    - **Type:** `nonpayable`
+1. `executeLowLevelRebalanceBorrow(int256 deltaBorrowAssets) → (int256, int256)`
+    - **Type:** `impure`
     - **Inputs:** `deltaBorrow (int256)` - The amount of borrow assets to withdraw or deposit (negative to send borrow assets).
     - **Outputs:**
-        - `deltaCollateral (int256)` - The amount of collateral assets transferred.
-        - `deltaShares (int256)` - The amount of shares minted or burned.
+        - `int256` - The amount of collateral assets transferred.
+        - `int256` - The amount of shares minted or burned.
     - **Description:** This function executes low level rebalance with input in borrow assets. This is a core rebalancing function that maintains the target LTV ratio.
-2. `executeLowLevelCollateral(int256 deltaCollateral) → (int256 deltaBorrow, int256 deltaShares)`
-    - **Type:** `nonpayable`
+2. `executeLowLevelRebalanceCollateral()(int256 deltaCollateralAssets) → (int256, int256)`
+    - **Type:** `impure`
     - **Inputs:** `deltaCollateral (int256)` - The amount of collateral assets to withdraw or deposit (positive to send collateral assets).
     - **Outputs:**
-        - `deltaBorrow (int256)` - The amount of borrow assets transferred.
-        - `deltaShares (int256)` - The amount of shares minted or burned.
+        - `int256` - The amount of borrow assets transferred.
+        - `int256` - The amount of shares minted or burned.
     - **Description:** This function executes low level rebalance with input in collateral assets.
-3. `executeLowLevelShares(int256 deltaShares) → (int256 deltaCollateral, int256 deltaBorrow)`
-    - **Type:** `nonpayable`
+3. `executeLowLevelRebalanceShares(int256 deltaShares) → (int256, int256)`
+    - **Type:** `impure`
     - **Inputs:** `deltaShares (int256)` - The amount of shares to mint or burn (positive for mint).
     - **Outputs:**
-        - `deltaCollateral (int256)` - The amount of collateral assets transferred.
-        - `deltaBorrow (int256)` - The amount of borrow assets transferred.
+        - `int256` - The amount of collateral assets transferred.
+        - `int256` - The amount of borrow assets transferred.
     - **Description:** This function executes low level rebalance with input in shares.
-4. `executeLowLevelBorrowHint(int256 deltaBorrow, bool isSharesPositiveHint) → (int256 deltaCollateral, int256 deltaShares)`
-    - **Type:** `nonpayable`
+4. `executeLowLevelRebalanceBorrowHint(int256 deltaBorrow, bool isSharesPositiveHint) → (int256, int256)`
+    - **Type:** `impure`
     - **Inputs:**
         - `deltaBorrow (int256)` - The amount of borrow assets to withdraw or deposit (negative to send borrow assets).
         - `isSharesPositiveHint (bool)` - The hint indicating if user expects to mint shares.
     - **Outputs:**
-        - `deltaCollateral (int256)` - The amount of collateral assets transferred.
-        - `deltaShares (int256)` - The amount of shares minted or burned.
-    - **Description:** This function is the same as executeLowLevelBorrow but with a hint to optimize gas usage.
-5. `executeLowLevelCollateralHint(int256 deltaCollateral, bool isSharesPositiveHint) → (int256 deltaBorrow, int256 deltaShares)`
-    - **Type:** `nonpayable`
+        - `int256` - The amount of collateral assets transferred.
+        - `int256` - The amount of shares minted or burned.
+    - **Description:** This function is the same as `executeLowLevelBorrow`, but with a hint to optimize gas usage.
+5. `executeLowLevelRebalanceCollateralHint(int256 deltaCollateral, bool isSharesPositiveHint) → (int256, int256)`
+    - **Type:** `impure`
     - **Inputs:**
         - `deltaCollateral (int256)` - The amount of collateral assets to withdraw or deposit (positive to send collateral assets).
         - `isSharesPositiveHint (bool)` - The hint indicating if user expects to mint shares.
     - **Outputs:**
-        - `deltaBorrow (int256)` - The amount of borrow assets transferred.
-        - `deltaShares (int256)` - The amount of shares minted or burned.
+        - `int256` - The amount of borrow assets transferred.
+        - `int256` - The amount of shares minted or burned.
     - **Description:** This function is the same as executeLowLevelCollateral but with a hint to optimize gas usage.
 
 ## State Representation
@@ -418,14 +404,16 @@
     - **Type:** `view`
     - **Outputs:** `int256` - The current auction reward in collateral assets.
     - **Description:** This function returns the current auction reward denominated in collateral assets.
-7. `getRealBorrowAssets() → uint256`
-    - **Type:** `view`
-    - **Outputs:** `uint256` - The protocol's current debt in lending protocol.
-    - **Description:** This function returns the protocol's current debt position in the underlying lending protocol in borrow assets.
-8. `getRealCollateralAssets() → uint256`
-    - **Type:** `view`
-    - **Outputs:** `uint256` - The protocol's current collateral in lending protocol.
-    - **Description:** This function returns the protocol's current collateral position in the underlying lending protocol in collateral assets.
+7. `getRealBorrowAssets(bool isDeposit) → uint256`
+    - **Type:** view
+    - **Inputs:** `isDeposit (bool)` - Whether this is for deposit operations (true) or withdrawal operations (false).
+    - **Outputs:** `uint256` - The protocol's current debt in lending protocol.
+    - **Description:** This function returns the protocol's current debt position in the underlying lending protocol in borrow assets with context-aware pricing.
+8. `getRealCollateralAssets(bool isDeposit) → uint256`
+    - **Type:** `view`
+    - **Inputs:** `isDeposit (bool)` - Whether this is for deposit operations (true) or withdrawal operations (false).
+    - **Outputs:** `uint256` - The protocol's current collateral in lending protocol.
+    - **Description:** This function returns the protocol's current collateral position in the underlying lending protocol in collateral assets with context-aware pricing.
 9. `maxSafeLTV() → uint128`
     - **Type:** `view`
     - **Outputs:** `uint128` - The maximum safe loan-to-value ratio.
@@ -454,6 +442,38 @@
     - **Type:** `view`
     - **Outputs:** `address` - The fee collector address.
     - **Description:** This function returns the address that receives protocol fees.
+16. `baseTotalSupply() → uint256`
+    - **Type:** `view`
+    - **Outputs:** `uint256` - The base total supply of vault shares.
+    - **Description:** This function returns the base total supply of vault shares, excluding any growth fees.
+17. `maxGrowthFee() → uint256`
+    - **Type:** `view`
+    - **Outputs:** `uint256` - The maximum growth fee percentage.
+    - **Description:** This function returns the maximum growth fee that can be charged by the protocol.
+18. `lastSeenTokenPrice() → uint256`
+    - **Type:** `view`
+    - **Outputs:** `uint256` - The last seen token price from the oracle.
+    - **Description:** This function returns the most recent token price observed from the oracle connector.
+19. `isDepositDisabled() → bool`
+    - **Type:** `view`
+    - **Outputs:** `bool` - Whether deposits are currently disabled.
+    - **Description:** This function returns true if deposit functionality is currently disabled by the guardian.
+20. `isWithdrawDisabled() → bool`
+    - **Type:** `view`
+    - **Outputs:** `bool` - Whether withdrawals are currently disabled.
+    - **Description:** This function returns true if withdrawal functionality is currently disabled by the guardian.
+21. `isWhitelistActivated() → bool`
+    - **Type:** `view`
+    - **Outputs:** `bool` - Whether the whitelist is currently activated.
+    - **Description:** This function returns true if the whitelist functionality is currently active.
+22. `getLendingConnector() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The lending protocol connector contract address.
+    - **Description:** This function returns the address of the lending protocol connector that handles lending operations.
+23. `maxDeleverageFee() → uint256`
+    - **Type:** `view`
+    - **Outputs:** `uint256` - The maximum deleverage fee percentage.
+    - **Description:** This function returns the maximum fee charged when users deleverage their positions.
 
 ## Ownership
 
@@ -463,125 +483,137 @@
     - **Type:** `view`
     - **Outputs:** `address` - The current owner address.
     - **Description:** This function returns the address of the current contract owner.
+2. `governor() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The current governor address.
+    - **Description:** This function returns the address of the current governor who can modify protocol parameters.
+3. `guardian() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The current guardian address.
+    - **Description:** This function returns the address of the current guardian who can disable functions and perform emergency actions.
+4. `emergencyDeleverager() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The current emergency deleverager address.
+    - **Description:** This function returns the address of the emergency deleverager who can perform emergency deleveraging operations.
 
 ### Ownership write methods
 
 1. `transferOwnership(address newOwner)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `newOwner (address)` - The new owner address.
     - **Description:** This function transfers contract ownership to the new owner.
 2. `renounceOwnership()`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Description:** This function renounces ownership of the contract, making it ownerless.
+3. `initialize(StateInitData memory stateInitData, IModules modules)`
+    - **Type:** `impure`
+    - **Inputs:**
+        - `stateInitData (StateInitData)` - Initial state configuration data including target LTV, max safe LTV, min profit LTV, and other parameters.
+        - `modules (IModules)` - The modules interface containing vault modules and connectors.
+    - **Description:** This function initializes the LTV vault with the provided state data and modules. Can only be called once during deployment.
 
 ## Administration
 
 ### Administration write methods
 
 1. `setTargetLTV(uint128 value)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `value (uint128)` - The new target LTV value.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's new target LTV ratio (governor only).
 2. `setMaxSafeLTV(uint128 value)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `value (uint128)` - The new max safe LTV value.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's new maximum safe LTV ratio (governor only).
 3. `setMinProfitLTV(uint128 value)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `value (uint128)` - The new min profit LTV value.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's new minimum profitable LTV ratio (governor only).
 4. `setFeeCollector(address _feeCollector)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `_feeCollector (address)` - The new fee collector address.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's new fee collector address (governor only).
 5. `setMaxTotalAssetsInUnderlying(uint256 _maxTotalAssetsInUnderlying)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `_maxTotalAssetsInUnderlying (uint256)` - The new maximum total assets value.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's maximum total assets in underlying oracle assets (governor only).
 6. `setMaxDeleverageFee(uint256 value)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `value (uint256)` - The new max deleverage fee value.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's maximum deleverage fee (governor only).
 7. `setIsWhitelistActivated(bool activate)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `activate (bool)` - Whether to activate the whitelist.
-    - **Outputs:** None
     - **Description:** This function activates or deactivates the whitelist functionality (governor only).
-8. `setWhitelistRegistry(IWhitelistRegistry value)`
-    - **Type:** `nonpayable`
+8. `setWhitelistRegistry(address value)`
+    - **Type:** `impure`
     - **Inputs:** `value (IWhitelistRegistry)` - The new whitelist registry address.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's whitelist registry address (governor only).
 9. `setSlippageProvider(ISlippageProvider _slippageProvider)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `_slippageProvider (ISlippageProvider)` - The new slippage provider address.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's slippage provider address (governor only).
 10. `allowDisableFunctions(bytes4[] memory signatures, bool isDisabled)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:**
         - `signatures (bytes4[])` - Array of function signatures to enable/disable.
         - `isDisabled (bool)` - Whether to disable the functions.
-    - **Outputs:** None
     - **Description:** This function allows the guardian to disable or enable specific functions (guardian only).
 11. `setMaxGrowthFee(uint256 _maxGrowthFee)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `_maxGrowthFee (uint256)` - The new max growth fee value.
-    - **Outputs:** None
     - **Description:** This function sets the protocol's maximum growth fee (governor only).
-12. `setIsDepositDisabled(bool value)`
-    - **Type:** `nonpayable`
+12. `setModules(IModules _modules)`
+    - **Type:** `impure`
+    - **Inputs:** `_modules (IModules)` - The new modules provider address.
+    - **Description:** This function sets the modules provider address (owner only).
+13. `setIsDepositDisabled(bool value)`
+    - **Type:** `impure`
     - **Inputs:** `value (bool)` - Whether to disable deposits.
-    - **Outputs:** None
     - **Description:** This function disables or enables deposit functionality (guardian only).
-13. `setIsWithdrawDisabled(bool value)`
-    - **Type:** `nonpayable`
+14. `setIsWithdrawDisabled(bool value)`
+    - **Type:** `impure`
     - **Inputs:** `value (bool)` - Whether to disable withdrawals.
-    - **Outputs:** None
     - **Description:** This function disables or enables withdrawal functionality (guardian only).
-14. `setLendingConnector(ILendingConnector _lendingConnector)`
-    - **Type:** `nonpayable`
-    - **Inputs:** `_lendingConnector (ILendingConnector)` - The new lending connector address.
-    - **Outputs:** None
+15. `setLendingConnector(address _lendingConnector)`
+    - **Type:** `impure`
+    - **Inputs:** `_lendingConnector (address)` - The new lending connector address.
     - **Description:** This function sets the lending protocol connector address (owner only).
-15. `setOracleConnector(IOracleConnector _oracleConnector)`
-    - **Type:** `nonpayable`
-    - **Inputs:** `_oracleConnector (IOracleConnector)` - The new oracle connector address.
-    - **Outputs:** None
+16. `setOracleConnector(address _oracleConnector)`
+    - **Type:** `impure`
+    - **Inputs:** `_oracleConnector (address)` - The new oracle connector address.
     - **Description:** This function sets the oracle connector address (owner only).
-16. `setVaultBalanceAsLendingConnector(address _vaultBalanceAsLendingConnector)`
-    - **Type:** `nonpayable`
-    - **Inputs:** `_vaultBalanceAsLendingConnector (address)` - The new vault balance as lending connector address.
-    - **Outputs:** None
-    - **Description:** This function sets the vault balance as lending connector address (owner only).
 17. `deleverageAndWithdraw(uint256 closeAmountBorrow, uint256 deleverageFee)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:**
         - `closeAmountBorrow (uint256)` - The amount of borrow assets to close.
         - `deleverageFee (uint256)` - The deleverage fee to charge.
-    - **Outputs:** None
     - **Description:** This function performs emergency deleveraging and withdrawal of all assets (emergency deleverager only).
 18. `updateEmergencyDeleverager(address newEmergencyDeleverager)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `newEmergencyDeleverager (address)` - The new emergency deleverager address.
-    - **Outputs:** None
     - **Description:** This function updates the emergency deleverager address (owner only).
 19. `updateGovernor(address newGovernor)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `newGovernor (address)` - The new governor address.
-    - **Outputs:** None
     - **Description:** This function updates the governor address (owner only).
 20. `updateGuardian(address newGuardian)`
-    - **Type:** `nonpayable`
+    - **Type:** `impure`
     - **Inputs:** `newGuardian (address)` - The new guardian address.
-    - **Outputs:** None
     - **Description:** This function updates the guardian address (owner only).
+
+### Function control
+
+1. `_isFunctionDisabled(bytes4 signature) → bool`
+    - **Type:** `view`
+    - **Inputs:** `signature (bytes4)` - The function signature to check.
+    - **Outputs:** `bool` - Whether the function is disabled.
+    - **Description:** This function returns true if the specified function signature is currently disabled.
+2. `allowDisableFunctions(bytes4[] memory signatures, bool isDisabled)`
+    - **Type:** `impure`
+    - **Inputs:**
+        - `signatures (bytes4[])` - Array of function signatures to enable/disable.
+        - `isDisabled (bool)` - Whether to disable the functions.
+    - **Description:** This function allows the guardian to disable or enable specific functions (guardian only).
 
 ## Events
 
@@ -657,6 +689,11 @@
         - `newFutureRewardBorrowAssets (int256)` - The new future reward borrow assets.
         - `newFutureRewardCollateralAssets (int256)` - The new future reward collateral assets.
         - `newStartAuction (uint256)` - The new auction start timestamp.
+        - 
+2. `Initialized(uint64 version)`
+    - **Description:** This event is emitted when the contract is initialized.
+    - **Parameters:**
+        - `version (uint64)` - The initialization version.
 
 ### Administration Events
 
@@ -759,12 +796,47 @@
         - `previousOwner (address)` - The previous owner address.
         - `newOwner (address)` - The new owner address.
 
+### Errors
+
+1. `InvalidInitialization()`
+    - **Description:** This error is thrown when the contract is initialized incorrectly.
+2. `NotInitializing()`
+    - **Description:** This error is thrown when a function is called during initialization but the contract is not being initialized.
+3. `OwnableInvalidOwner(address owner)`
+    - **Description:** This error is thrown when an invalid owner address is provided.
+    - **Parameters:**
+        - `owner (address)` - The invalid owner address.
+4. `OwnableUnauthorizedAccount(address account)`
+    - **Description:** This error is thrown when an unauthorized account tries to perform an owner-only operation.
+    - **Parameters:**
+        - `account (address)` - The unauthorized account address.
+5. `ReentrancyGuardReentrantCall()`
+    - **Description:** This error is thrown when a reentrant call is detected.
+
 ## Connectors
 
-### Read Connector Address
+### **Read Connector Address**
 
-- `oracleConnector() → address` - Returns oracle connector address.
-- `lendingConnector() → address` - Returns lending protocol connector address.
+1. `oracleConnector() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The oracle connector contract address.
+    - **Description:** This function returns the address of the oracle connector that provides price feeds for collateral and borrow tokens.
+2. `lendingConnector() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The lending protocol connector contract address.
+    - **Description:** This function returns the address of the lending protocol connector that handles lending operations.
+3. `slippageProvider() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The slippage provider address.
+    - **Description:** This function returns the address of the slippage provider that manages slippage parameters.
+4. `vaultBalanceAsLendingConnector() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The vault balance as lending connector address.
+    - **Description:** This function returns the address of the vault balance as lending connector.
+5. `whitelistRegistry() → address`
+    - **Type:** `view`
+    - **Outputs:** `address` - The whitelist registry address.
+    - **Description:** This function returns the address of the whitelist registry that manages access control.
 
 ---
 
