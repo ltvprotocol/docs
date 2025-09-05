@@ -18,6 +18,9 @@ A minimal and lightweight frontend for interacting with the LTV Protocol testnet
 
 ## 🏷️ Release Versions
 
+- **v0.0.3** - Fixes wallet duplication/loading & Sepolia switching issues
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.3)
+
 - **v0.0.2** — Early testnet release with basic vault actions and initial UI improvements.  
   [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.2)
 
