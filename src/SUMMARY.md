@@ -2,6 +2,8 @@
 
 - [LTV protocol paper](./protocol_paper.md)
 
+- [Pilot Vault - Lido ↔ ETH Vault (AAVE v3)](./pilot_vault.md)
+
 - [Testnets](./testnets.md)
   - [Ghost Testnet](./ghost_testnet.md)
   - [Aave Sepolia Testnet](./aave_testnet.md)
