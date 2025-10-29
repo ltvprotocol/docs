@@ -4,7 +4,7 @@
 
 - [Pilot Vault - Lido ↔ ETH Vault (AAVE v3)](./pilot_vault.md)
 
-- [Vaults launch proccess](./vaults-launch.md)
+- [Vaults launch proccess](./vaults_launch.md)
 
 - [Testnets](./testnets.md)
   - [Ghost Testnet](./ghost_testnet.md)
