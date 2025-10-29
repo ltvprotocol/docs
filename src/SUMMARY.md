@@ -2,6 +2,8 @@
 
 - [LTV protocol paper](./protocol_paper.md)
 
+- [Vaults launch proccess](./vaults-launch.md)
+
 - [Pilot Vault - Lido ↔ ETH Vault (AAVE v3)](./pilot_vault.md)
 
 - [Testnets](./testnets.md)
