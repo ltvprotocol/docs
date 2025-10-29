@@ -1,6 +1,6 @@
 # LTV Protocol — Vault Launch Process
 
-This document describes how new **LTV leveraged vaults** are launched on mainnet.  
+The procedure for launching new **LTV leveraged vaults** on mainnet
 Each vault goes through a **four-phase rollout** to ensure stable growth, safe liquidity expansion, and verified performance before opening to the public.
 
 ## Launch Rationale
