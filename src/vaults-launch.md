@@ -26,7 +26,7 @@ Only internal capital is used during this phase.
 Once stability is confirmed, **private liquidity providers** are onboarded through a direct whitelist.  
 This step expands the vault’s liquidity under controlled participation.
 
-Key goals:
+Main goals:
 
 - Test scalability under moderate load.  
 - Confirm smooth operation of deposits, withdrawals, etc.
