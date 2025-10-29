@@ -3,7 +3,7 @@
 This document describes how new **LTV leveraged vaults** are launched on mainnet.  
 Each vault goes through a **four-phase rollout** to ensure stable growth, safe liquidity expansion, and verified performance before opening to the public.
 
-## Overview
+## Launch Rationale
 
 Every vault launch follows the same principle:  
 **start small, prove stability, scale gradually.**
