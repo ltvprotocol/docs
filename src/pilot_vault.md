@@ -15,3 +15,6 @@ The wstETH ↔ ETH Vault is designed to maximize yield from Ethereum staking thr
 | **Lending Protocol** | AAVE v3 |
 | **Network** | Ethereum Mainnet |
 
+## Launch Process
+
+The wstETH ↔ ETH Vault follows LTV Protocol’s [four-phase launch process](./vaults_launch.md): it begins with internal team capital to verify integrations and system stability, then expands to whitelisted private LPs to test scalability. Next, access opens to 42 NFT holders for controlled community participation. Finally, the vault becomes permissionless and public, with capacity scaling based on risk parameters and available AAVE v3 liquidity.
