@@ -15,6 +15,8 @@
 
 - [Public contract ABI](./abi.md)
 
+- [42 NFT](./42_NFT.md)
+
 - [EIP 4626 systematisation](./eip4626.md)
 
 - [Connectors](./connectors.md)
