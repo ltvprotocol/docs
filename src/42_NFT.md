@@ -15,7 +15,7 @@ Each NFT represents commitment to the protocol’s vision and grants tangible be
 | **Total Supply** | 1,024 NFTs |
 | **Claim Fee** | 0.042 ETH per NFT |
 | **Network** | Ethereum Mainnet |
-| **Mint Limit** | One NFT per address |
+| **Mint Limit** | One NFT per address (needs whitelist or promocode) |
 
 ## Minting Conditions
 
