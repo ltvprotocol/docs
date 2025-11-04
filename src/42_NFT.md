@@ -3,7 +3,8 @@
 ## Overview
 
 **42 NFT** is the official limited-edition NFT collection by **LTV Protocol**, created to recognize and reward the earliest participants of the ecosystem.  
-It serves both as a symbolic representation of leverage, yield, and mathematical precision — and as a functional access token granting exclusive privileges within the protocol.
+NFT ia a functional access token granting exclusive privileges within the protocol.
+It also serves both as a symbolic representation of leverage, yield, and mathematical precision.
 
 Each NFT represents commitment to the protocol’s vision and grants tangible benefits to holders during and after the mainnet rollout.
 
