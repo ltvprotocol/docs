@@ -33,8 +33,6 @@ Points can be **boosted** through specific multipliers that reflect early or ext
 | Multiplier Type | Description | Boost |
 |------------------|--------------|--------|
 | **42 NFT Holder Bonus** | Exclusive multiplier for holders of 42 NFTs. | **+42%** |
-| **Duration Multiplier** | Additional bonus for maintaining deposits over extended periods. | TBD |
-| **Partner or Campaign Multipliers** | Future event-based or partner-specific bonuses. | TBD |
 
 Further multipliers and conditions will be announced closer to the public mainnet release.
 
