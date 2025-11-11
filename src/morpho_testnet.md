@@ -32,22 +32,70 @@ A minimal and lightweight frontend for interacting with the ghost [testnet vault
 Source code: [https://github.com/ltvprotocol/pico_ui](https://github.com/ltvprotocol/pico_ui)
 Detailed documentation: [Pico UI Docs](./pico_ui.md)
 
-# Aave Sepolia Testnet Addresses
-
-## Implementation
+# Moroho Sepolia Testnet Addresses
 
 | Name | Address |
 |------|---------|
 | **Morpho LTV Vault** | `0x9A1Fc3ff25083f33373Bbf9617E12892FF19E07A` |
 
-## Core Contracts
+## v0.1.10
+
+Actual (v0.1.10) tag: [testnet_v0.1.10](https://github.com/ltvprotocol/ltv_v0/releases/tag/testnet_v0.1.10)
+
+### Core Contracts
+
+| Name | Address |
+|------|---------|
+| **Implementation** | `0x480d554D8BBF66d301063CccbA7847f26BD0293f` |
+| **Beacon** | `0xfE8f068568Cc84c3818406765da285e7f57B8A80` |
+
+### Modules
+
+| Name | Address |
+|------|---------|
+| **ERC20 Module** | `0x9FB3133Ebb390bc1d46d555B06F2E115Ee919F17` |
+| **Borrow Vault Module** | `0x1ECE1D0C024526995696F9FD321225130700e8D6` |
+| **Collateral Vault Module** | `0x1ED1573f1C756aD9b915f5B804a306b62a140c1D` |
+| **Low-Level Rebalance Module** | `0xF8cBf81bbb5EFc1faC45F8d2F1E99C06C7b69D86` |
+| **Auction Module** | `0xeC7d68652654c297C5FCE832E7445b9158CDB3aA` |
+| **Administration Module** | `0x6DC2cb8fdc1e8D8c8DD6E4244882f3ADA2B7C33E` |
+| **Initialize Module** | `0x29ceFDfefd5b24C14Bf2A4c7E464D1dCC4fce206` |
+| **Modules Provider** | `0xC7349994eb73Ba9090980DFc8628849fDA4d5A29` |
+
+### Connectors
+
+| Name | Address |
+|------|---------|
+| **Whitelist Registry** | `0x69DafAfcA68306c5B664A8BF23196DA9350edC59` |
+| **Vault Balance Connector** | `0xf3AaaB0591e74F9D509296906366704e9C3f6c2A` |
+| **Slippage Connector** | `0xd64De8418ee7EF911175A8bd8B4Bf4FAcD72796F` |
+| **Oracle Connector** | `0x1a0b3f2f3823582871c05634d4874d26ad29542c` |
+| **Lending Connector** | `0xb241c66c61adb67cd261e71f425bc38cff6f00a4` |
+
+### Libraries
+
+| Name | Address |
+|------|---------|
+| **DepositWithdraw** | `0xA3FbBdA4dbAe3e5d9138dBF0055d1eA5327624Ad` |
+| **MintRedeem** | `0x676384D764e33032E228823DFAE10dEce86c24E1` |
+| **NextStep** | `0x2b90Ed4B9b8B91D57612ef6F8121368fa8d862bA` |
+| **DeltaSharesAndDeltaRealBorrow** | `0x8f806DE6E7859164660AB64d84d50449c3Aa4d51` |
+| **DeltaRealBorrowAndDeltaRealCollateral** | `0xF1A532acb2e9cc03c3911bEc718fca71c257EB83` |
+| **DeltaSharesAndDeltaRealCollateral** | `0x7A6A06bfeddA3c38536Cef100091209BD9F2417E` |
+| **LowLevelRebalanceMath** | `0xAdEaD04C1595BF3b091e2796299beD8F59Ad15BC` |
+
+## v0.1.4
+
+Actual (v0.1.4) tag: [morpho_testnet_v0.1.4](https://github.com/ltvprotocol/ltv_v0/releases/tag/morpho_testnet_v0.1.4)
+
+### Core Contracts
 
 | Name | Address |
 |------|---------|
 | **Implementation** | `0x850381Ee6363e05630692cEF49e815B320F72B8c` |
 | **Beacon** | `0xfE8f068568Cc84c3818406765da285e7f57B8A80` |
 
-## Modules
+### Modules
 
 | Name | Address |
 |------|---------|
@@ -60,7 +108,7 @@ Detailed documentation: [Pico UI Docs](./pico_ui.md)
 | **Initialize Module** | `0x599484fda8E1e3d69ca480AcFc77C2Ea36D0f0Bb` |
 | **Modules Provider** | `0xd843c8d41a2c78B24af7155Ea407940a002604d9` |
 
-## Connectors
+### Connectors
 
 | Name | Address |
 |------|---------|
@@ -70,7 +118,7 @@ Detailed documentation: [Pico UI Docs](./pico_ui.md)
 | **Oracle Connector** | `0xAdF9c5C3e09Ad8F35eAf96c7072Eca84A18b5AE7` |
 | **Lending Connector (Morpho)** | `0x2F7E5B3f16120363E9d6C6a46744D3a90D426CB0` |
 
-## Token Addresses (Aave Sepolia Testnet)
+### Token Addresses (Aave Sepolia Testnet)
 
 | Name | Address |
 |------|---------|
