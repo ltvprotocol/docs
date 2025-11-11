@@ -24,7 +24,7 @@ Vault: [0x685d1257671c9a0ec816e4d74b4912af26be98fb](https://sepolia.etherscan.io
 
 Upgradeable beacon proxy implementation of the vault.
 
-Vault: [0xAa707a2a0e38DE55cA0b61dd32468e357b55b15f](https://sepolia.etherscan.io/address/0xAa707a2a0e38DE55cA0b61dd32468e357b55b15f)
+Vault: [0xec7925e679440271bd9d243efd158e96a604a233](https://sepolia.etherscan.io/address/0xec7925e679440271bd9d243efd158e96a604a233)
 
 ## Description
 
@@ -70,7 +70,7 @@ Actual (v0.1.11) tag: [testnet_v0.1.10](https://github.com/ltvprotocol/ltv_v0/re
 
 | Name | Address |
 |------|---------|
-| **AAVE LTV Upgradeable Beacon Proxy Vault** | `0xAa707a2a0e38DE55cA0b61dd32468e357b55b15f` |
+| **AAVE LTV Upgradeable Beacon Proxy Vault** | `0xec7925e679440271bd9d243efd158e96a604a233` |
 
 ## v0.1.10
 
