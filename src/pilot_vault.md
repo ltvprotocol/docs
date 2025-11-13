@@ -85,4 +85,13 @@ This yield consistency across multiple market regimes validates the model’s re
 | **DeltaSharesAndDeltaRealBorrow** | `0x48cB8763318312E6836f37A66429f26fCd894E7b` |
 | **DeltaRealBorrowAndDeltaRealCollateral** | `0x32c6494A272fB170C95D1855917231986e827838` |
 | **DeltaSharesAndDeltaRealCollateral** | `0xB5dBb061862c13e51085162236da8ee1AB18387e` |
-| **LowLevelRebalanceMath** | `0x9e9f13440Fdd9f30b8693fB04Da4dc0c763d85F1` |          
+| **LowLevelRebalanceMath** | `0x9e9f13440Fdd9f30b8693fB04Da4dc0c763d85F1` |
+
+### Helpers
+
+| Name | Address |
+|------|---------|
+| **Safe4626Helper** | `0xb79baeb8eed4d53f040dfea46703812bbd0a1d9e` |
+| **Safe4626CollateralHelper** | `0x25cd7dc2ffb7c453241a8c530e73c34bd642809c` |
+| **FlashLoanMintHelperWstethAndWeth** | `0x2f5636d96ed34cd9f3eb3ab5b657175a36408645` |
+| **FlashLoanRedeemHelperWstethAndWeth** | `0xa5836756b1d5db03dfccbafc4083a1e675a1f644` |          
