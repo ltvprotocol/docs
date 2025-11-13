@@ -60,4 +60,4 @@ The **42 NFT** is directly integrated with the Points program.
 Holders receive a **+42% multiplier** on all points earned.  
 It also grants early access to the closed beta phase, allowing holders to participate in the point phase earlier than the general public.
 
-For detailed information, refer to the [42 NFT documentation](./42_NFT.md).
+For detailed information, refer to the [42 NFT documentation](./nft_42.md).

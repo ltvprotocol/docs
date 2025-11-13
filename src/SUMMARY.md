@@ -15,7 +15,7 @@
 
 - [Public contract ABI](./abi.md)
 
-- [42 NFT](./42_NFT.md)
+- [42 NFT](./nft_42.md)
 
 - [Points program](./points_program.md)
 
