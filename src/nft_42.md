@@ -63,7 +63,7 @@ Each 42 NFT provides concrete, protocol-level advantages to its holder:
 | Contract | Network | Address |
 |-----------|----------|----------|
 | **42 NFT Contract** | Ethereum | [0xF478F017cfe92AaF83b2963A073FaBf5A5cD0244](https://etherscan.io/address/0xF478F017cfe92AaF83b2963A073FaBf5A5cD0244#readProxyContract) |
-| **NFT Sale Contract** | Ethereum | [0x79050cBA7F04962dc8B28a163716a62769d3c0D7](https://etherscan.io/address/0x79050cBA7F04962dc8B28a163716a62769d3c0D7#readProxyContract) |
+| **NFT Mint Contract** | Ethereum | [0x79050cBA7F04962dc8B28a163716a62769d3c0D7](https://etherscan.io/address/0x79050cBA7F04962dc8B28a163716a62769d3c0D7#readProxyContract) |
 
 ## Notes
 

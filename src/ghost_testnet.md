@@ -72,6 +72,51 @@ Detailed documentation: [Pico UI Docs](./pico_ui.md)
 
 # Versions
 
+## v0.1.10
+
+Actual (v0.1.10) tag: [testnet_v0.1.10](https://github.com/ltvprotocol/ltv_v0/releases/tag/testnet_v0.1.10)
+
+### Core Contracts
+
+| Name | Address |
+|------|---------|
+| **Implementation** | `0x480d554d8bbf66d301063cccba7847f26bd0293f` |
+
+### Modules
+
+| Name | Address |
+|------|---------|
+| **ERC20 Module** | `0x9fb3133ebb390bc1d46d555b06f2e115ee919f17` |
+| **Borrow Vault Module** | `0x1ece1d0c024526995696f9fd321225130700e8d6` |
+| **Collateral Vault Module** | `0x1ed1573f1c756ad9b915f5b804a306b62a140c1d` |
+| **Low-Level Rebalance Module** | `0xf8cbf81bbb5efc1fac45f8d2f1e99c06c7b69d86` |
+| **Auction Module** | `0xec7d68652654c297c5fce832e7445b9158cdb3aa` |
+| **Administration Module** | `0x6dc2cb8fdc1e8d8c8dd6e4244882f3ada2b7c33e` |
+| **Initialize Module** | `0x29cefdfefd5b24c14bf2a4c7e464d1dcc4fce206` |
+| **Modules Provider** | `0xc7349994eb73ba9090980dfc8628849fda4d5a29` |
+
+### Connectors
+
+| Name | Address |
+|------|---------|
+| **Whitelist Registry** | `0x69dafafca68306c5b664a8bf23196da9350edc59` |
+| **Vault Balance Connector** | `0xf3aaab0591e74f9d509296906366704e9c3f6c2a` |
+| **Slippage Connector** | `0xd64de8418ee7ef911175a8bd8b4bf4facd72796f` |
+| **Oracle Connector** | `0xa19d6038a1d3b2c86b2ba98bf98cc39273644ec1` |
+| **Lending Connector** | `0x433d9aa49dd184863ac818ff8aa359047510dc30` |
+
+### Libraries
+
+| Name | Address |
+|------|---------|
+| **DepositWithdraw** | `0xA3FbBdA4dbAe3e5d9138dBF0055d1eA5327624Ad` |
+| **MintRedeem** | `0x676384D764e33032E228823DFAE10dEce86c24E1` |
+| **NextStep** | `0x2b90Ed4B9b8B91D57612ef6F8121368fa8d862bA` |
+| **DeltaSharesAndDeltaRealBorrow** | `0x8f806DE6E7859164660AB64d84d50449c3Aa4d51` |
+| **DeltaRealBorrowAndDeltaRealCollateral** | `0xF1A532acb2e9cc03c3911bEc718fca71c257EB83` |
+| **DeltaSharesAndDeltaRealCollateral** | `0x7A6A06bfeddA3c38536Cef100091209BD9F2417E` |
+| **LowLevelRebalanceMath** | `0xAdEaD04C1595BF3b091e2796299beD8F59Ad15BC` |
+
 ## v0.1.5
 
 Actual (v0.1.5) tag: [ghost_v0.1.5](https://github.com/ltvprotocol/ltv_v0/releases/tag/ghost_v0.1.5)

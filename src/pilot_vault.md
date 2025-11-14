@@ -34,7 +34,7 @@ Since early 2023, while base ETH staking yield averaged **~3.48% APY**, the same
 
 This yield consistency across multiple market regimes validates the model’s resilience and sustainability as a foundation for subsequent vaults.  
 
-![wstETH APY vs wstETH_WETH x12 AAVE v3 vault](wstETH_APY_vs_wstETH_WETH_x12_Aave_v3.png)
+![wstETH APY vs wstETH_WETH x12 AAVE v3 vault](images/wstETH_APY_vs_wstETH_WETH_x12_Aave_v3.png)
 
 ## Addresses
 
