@@ -3,14 +3,14 @@
 - [LTV protocol paper](./protocol_paper.md)
 
 - [Mainnets](./Mainnets.md)
-  - [Pilot Vault - Lido ↔ ETH Vault (AAVE v3)](./pilot_vault.md)
-
-- [Vaults launch proccess](./vaults_launch.md)
+  - [Lido ↔ ETH Vault (AAVE v3)](./pilot_vault.md)
 
 - [Testnets](./testnets.md)
   - [Ghost Testnet](./ghost_testnet.md)
   - [Aave Sepolia Testnet](./aave_testnet.md)
   - [Morpho Sepolia Testnet](./morpho_testnet.md)
+
+- [Vaults launch proccess](./vaults_launch.md)
 
 - [Pico UI](./pico_ui.md)
 
