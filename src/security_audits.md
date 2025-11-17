@@ -17,4 +17,4 @@ Oxorio report: [https://github.com/ltvprotocol/vault_craft/blob/4273c1d9100a6793
 
 Repository: [transparent_upgradeable_beacon_proxy](https://github.com/ltvprotocol/transparent_upgradeable_beacon_proxy)
 
-Oxorio report: [https://github.com/ltvprotocol/transparent_upgradeable_beacon_proxy/blob/TODO](https://github.com/ltvprotocol/transparent_upgradeable_beacon_proxy/blob/TODO)
+Oxorio report: [https://github.com/ltvprotocol/transparent_upgradeable_beacon_proxy/blob/696553975155c3dbf78a14a38b2d2f38bd88ee98/audits/oxorio_transparent_upgradeable_beacon_proxy_security_audit.pdf](https://github.com/ltvprotocol/transparent_upgradeable_beacon_proxy/blob/696553975155c3dbf78a14a38b2d2f38bd88ee98/audits/oxorio_transparent_upgradeable_beacon_proxy_security_audit.pdf)
