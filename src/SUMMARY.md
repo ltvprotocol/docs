@@ -23,3 +23,5 @@
 - [EIP 4626 systematisation](./eip4626.md)
 
 - [Connectors](./connectors.md)
+
+- [Security audits](./security_audits.md)
