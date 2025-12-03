@@ -27,7 +27,7 @@ At that rate, starting from **12× leverage**, the vault would only approach liq
 This creates a significant safety buffer, giving sufficient time to rebalance, unwind, or deleverage before any critical thresholds are reached.  
 The vault's oracle setup further minimizes liquidation risk by using **wstETH's redemption price** (not market spot), making it resistant to short-term depegs or volatility shocks.
 
-## Public Monitoring
+## Dune Analytics
 
 The wstETH ↔ ETH Vault is publicly monitored via a Dune Analytics dashboard that provides real-time insights into vault performance and metrics. The dashboard tracks key indicators including vault TVL (Total Value Locked), LTV ratios, vault token price, and token holder distribution, enabling transparent monitoring of vault operations and health.
 
