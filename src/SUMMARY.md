@@ -2,7 +2,7 @@
 
 - [LTV protocol paper](./protocol_paper.md)
 
-- [Mainnets](./Mainnets.md)
+- [Mainnets](./mainnets.md)
   - [Lido ↔ ETH Vault (AAVE v3)](./pilot_vault.md)
 
 - [Testnets](./testnets.md)
