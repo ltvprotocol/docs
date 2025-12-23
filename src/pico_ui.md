@@ -18,6 +18,39 @@ A minimal and lightweight frontend for interacting with the LTV Protocol testnet
 
 ## Release Versions
 
+- **v0.0.14** — Improved position visibility with leveraged token amounts, USD max values, new APY API, and quick action buttons (25%/50%/75%).  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.14)
+
+- **v0.0.13** — UX fixes including better points formatting, disabled actions on invalid inputs, and cleared persistent errors.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.13)
+
+- **v0.0.12** — Hotfix for button disable logic blocking valid transactions (building on v0.0.11 features).  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.12)
+
+- **v0.0.11** — Points system integration and Mainnet 42 NFT snapshot completion.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.11)
+
+- **v0.0.10** — Cleaner UX, simpler navigation, and improved flash-loan interactions.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.10)
+
+- **v0.0.9** — React versions update and deployment improvements.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.9)
+
+- **v0.0.8** — Mainnet vault addition, full wstETH support, flash-loan mint/redeem, and domain migration to app.ltv.finance.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.8)
+
+- **v0.0.7** — Major upgrade with bug fixes, multi-network support, low-level vault functions, direct auction execution, and smoother design.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.7)
+
+- **v0.0.6** — Fixes for rounding/max values/minor UI bugs, plus major refactor for speed and stability.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.6)
+
+- **v0.0.5** — Fix for clearer messaging when no wallets are detected.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.5)
+
+- **v0.0.4** — Multi-vault interface and auto-reconnect to wallet.  
+  [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.4)
+
 - **v0.0.3** - Fixes wallet duplication/loading & Sepolia switching issues
   [View Release](https://github.com/ltvprotocol/pico_ui/releases/tag/v0.0.3)
 
