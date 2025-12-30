@@ -38,15 +38,63 @@ Further multipliers and conditions will be announced closer to the public mainne
 
 ## Points calculation formula
 
-The total number of points earned by a participant is determined by the following formula:
-```
-Total Points = Base Points (Liquidity × Duration) × (1 + ΣMultipliers)
-```
-Where:
-- **Base Points** reflect the combination of deposit size and time held.  
-- **ΣMultipliers** represents the sum of all applicable percentage boosts (e.g., +42% from NFT).  
+Points accrue **per block**, proportional to the number of vault shares held.
+Holding a **42 NFT** applies an additional **+42% boost** on top of the base rate.
+All coefficients are **parameters**, not hardcoded constants, and may change over time.
 
-Formula subject to adjustment prior to final point program release.
+The total number of points earned by a participant is determined by the following formula:
+
+\\[ \text{userPoints} = \sum ( \text{userBalanceAtBlock} \cdot \text{basePointsRate} ) \\]
+\\[+ \sum ( \text{userBalanceAtBlock} \cdot \text{hasUserNftAtBlock} \cdot \text{nftBoostRate} \cdot \text{basePointsRate} ) \\]
+
+### Definitions
+
+- **userBalanceAtBlock**
+    
+User balance measured in **tokenized vault shares** at a given block.
+    
+- **basePointsRate**
+    
+Base points accrual rate.
+
+```
+basePointsRate = 1.5 / 1000
+```
+
+- **nftBoostRate**
+    
+Additional boost applied for NFT holders.
+    
+```
+nftBoostRate = 0.42
+```
+
+- **hasUserNftAtBlock**
+    
+Binary indicator of NFT ownership at a given block:    
+
+```
+1 — user holds a 42 NFT
+0 — user does not hold a 42 NFT
+```
+
+### What this means in practice
+
+To make the scale intuitive:
+
+- Holding **1 vault share** earns approximately **~10 points per day**.
+- Holding **1 vault share + a 42 NFT** earns approximately **~14 points per day** (the NFT provides a +42% boost).
+
+These values are **approximations**, meant to illustrate the order of magnitude rather than exact block-level accounting.
+
+Points are recalculated and redistributed **once per day**, withing an hour after at **00:00 UTC**.
+
+After each recalculation:
+- vault share balances are reflected in the app
+- point balances update
+- leaderboard rankings refresh
+
+All rates are configurable parameters and may evolve over time as the protocol scales.
 
 ## Participation rules
 
