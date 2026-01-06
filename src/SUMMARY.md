@@ -19,6 +19,8 @@
 - [42 NFT](./nft_42.md)
 
 - [Points program](./points_program.md)
+  - [Points engine](./points_engine.md)
+  - [Leaderboard](./leaderboard.md)
 
 - [EIP 4626 systematisation](./eip4626.md)
 
