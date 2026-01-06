@@ -11,6 +11,7 @@
   - [Morpho Sepolia Testnet](./morpho_testnet.md)
 
 - [Vaults launch proccess](./vaults_launch.md)
+  - [Gate 42](./gate_42.md)
 
 - [Pico UI](./pico_ui.md)
 
